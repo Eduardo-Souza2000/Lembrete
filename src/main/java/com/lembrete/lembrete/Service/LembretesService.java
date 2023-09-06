@@ -71,7 +71,7 @@ public class LembretesService {
 
         if(id == null){
             throw new RuntimeException(" Id do Lembrete Invalido");
-        } else if (!pessoasRepository.idExistente(id)) {
+        } else if (!lembretesRepository.idExistente(id)) {
             throw new RuntimeException(" Lembrete nao existe no banco");
         }else {
             lembretesRepository.delete(lembretes);

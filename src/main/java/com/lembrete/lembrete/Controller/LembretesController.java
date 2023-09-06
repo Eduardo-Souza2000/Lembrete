@@ -38,13 +38,6 @@ public class LembretesController {
     @PostMapping
     public ResponseEntity<String> cadastrar(@RequestBody final Lembretes lembretes){
         try{
-            Pessoas pessoa = pessoasService.procurar(lembretes.getPessoa().getNome());
-            if (pessoa == null) {
-                pessoa = new Pessoas();
-                pessoa.setNome(lembretes.getPessoa().getNome());
-                pessoasService.cadastrarPessoa(pessoa);
-            }
-            lembretes.setPessoa(pessoa);
             this.lembretesService.cadastroLembrete(lembretes);
             return ResponseEntity.ok("Registro Cadastrado com sucesso");
         } catch (Exception e){

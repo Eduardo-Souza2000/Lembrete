@@ -22,7 +22,6 @@ public class PessoasService {
         if (!pessoasRepository.NomePessoaExistente(nome) ){
             throw new RuntimeException("Nome inválido - Motivo: Nao Existe no Banco de Dados");
         }
-        pessoas.getLembretes().size();
         return pessoas;
     }
 
